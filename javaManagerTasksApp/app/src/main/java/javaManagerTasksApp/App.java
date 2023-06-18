@@ -3,12 +3,24 @@
  */
 package javaManagerTasksApp;
 
+import view.HomeScreen;
+
 public class App {
+    
+    static  HomeScreen home = new HomeScreen();
+    
+    
+    /*
     public String getGreeting() {
-        return "Hello World!";
+        return "tela RR";
     }
+    */
+    
+    
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        //System.out.println(new App().getGreeting());
+        
+        home.setVisible(true);
     }
 }
