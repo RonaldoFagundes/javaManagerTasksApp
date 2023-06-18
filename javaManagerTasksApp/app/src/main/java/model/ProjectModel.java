@@ -1,14 +1,13 @@
-/*
+package model;
+
+import controller.Project;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-import model.Project;
 import util.ConnectionFactory;
-*/
-package model;
 
 
 
@@ -20,7 +19,7 @@ public class ProjectModel {
    
      
     
-    /*
+    
      public void save(Project project)  {
         
      String sql = "INSERT INTO tb_projects"
@@ -179,7 +178,7 @@ public class ProjectModel {
     }
     
     
-   */ 
+   
     
     
     

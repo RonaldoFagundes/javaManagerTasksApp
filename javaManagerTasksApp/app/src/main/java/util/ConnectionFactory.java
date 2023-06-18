@@ -3,6 +3,8 @@ package util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 
 
@@ -18,10 +20,8 @@ public class ConnectionFactory {
     
     public static Connection getConnection(){
         
-         try{
-             
+         try{             
               Class.forName(DRIVER); 
-              System.out.println(" conexão feita com sucesso ao data base "+DB);
               return DriverManager.getConnection(URL, USER, PASS);
              
             }catch(Exception ex){             
@@ -39,6 +39,49 @@ public class ConnectionFactory {
                  conn.close();
                  System.out.println(" conexão encerrada com sucesso  ");
                }
+         }catch(Exception ex){             
+               System.out.println(" erro ao encerrar a conexão ao db "+ex);             
+         }
+     }
+    
+    
+    public static void closeConnection (Connection conn, PreparedStatement pst){
+         try{
+             
+             if (conn != null){
+                 conn.close();
+                 System.out.println(" conexão encerrada com sucesso  ");
+               }
+             
+             if(pst != null){
+                 pst.close();
+             }
+             
+             
+         }catch(Exception ex){             
+               System.out.println(" erro ao encerrar a conexão ao db "+ex);             
+         }
+     }
+    
+    
+    
+    public static void closeConnection (Connection conn, PreparedStatement pst, ResultSet rs){
+         try{
+             
+             if (conn != null){
+                 conn.close();
+                 System.out.println(" conexão encerrada com sucesso  ");
+               }
+             
+             if(pst != null){
+                 pst.close();
+             }
+             
+             if(rs != null){
+                 rs.close();
+             }
+             
+             
          }catch(Exception ex){             
                System.out.println(" erro ao encerrar a conexão ao db "+ex);             
          }

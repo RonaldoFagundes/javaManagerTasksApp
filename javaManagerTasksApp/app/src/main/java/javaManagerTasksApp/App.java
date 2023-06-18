@@ -3,13 +3,25 @@
  */
 package javaManagerTasksApp;
 
+import controller.Project;
+import controller.Task;
 import java.sql.Connection;
+import java.util.Date;
+import java.util.List;
+import model.ProjectModel;
+import model.TaskModel;
 import util.ConnectionFactory;
-import view.HomeScreen;
+
+
+
+
 
 public class App {
     
-    static  HomeScreen home = new HomeScreen();
+    
+    
+    
+   // static  HomeScreen home = new HomeScreen();
     
     
     /*
@@ -19,13 +31,75 @@ public class App {
     */
     
     
+    
+    
+    
 
     public static void main(String[] args) {
-        //System.out.println(new App().getGreeting());
         
+        
+        //System.out.println(new App().getGreeting());        
         //home.setVisible(true);
         
-        Connection conn = ConnectionFactory.getConnection();
-        ConnectionFactory.closeConnection(conn);
+       // Connection conn = ConnectionFactory.getConnection();
+       // ConnectionFactory.closeConnection(conn);
+       
+       
+       
+             
+        /*  Testes unitários
+       
+         // instancias de projeto
+        ProjectModel projectModel = new ProjectModel();
+        Project project = new Project();
+        
+        // insert um novo projeto 
+        project.setName("Projeto 18/06/2023");
+        project.setDescription("recriar projeto todo app");
+        projectModel.save(project);              
+        
+        //update projeto
+        project.setId(2);
+        project.setName("atualaizando nome do projeto");
+        project.setDescription("atualaizando descrição do projeto ");
+        projectModel.update(project);
+       
+        //delete projeto
+        projectModel.removeById(2);
+        
+        // listar a quantidade de projetos
+        List <Project> projects = projectModel.getAll();
+        System.out.println("Total dos Projetos = "+projects.size());
+        
+       
+          // instancias das tarefas
+        TaskModel tasksModel = new TaskModel();
+        Task task = new Task();
+        
+        // insert nova tarefa
+        task.setIdProject(2);
+        task.setName("inserir nome da tarefa");
+        task.setDescription("description");
+        task.setNotes("sem notas");
+        task.setIsCompleted(false);
+        task.setDeadLine(new Date());
+        tasksModel.save(task);
+        
+        //update
+        task.setName("update tarefa");
+        tasksModel.update(task);
+        
+        //list tarefas
+         List<Task> tasks = tasksModel.getAll(2);
+         System.out.println("Total de tarefas  = "+tasks.size());
+        
+        */
+        
+        
+        
     }
+    
+    
+    
+    
 }

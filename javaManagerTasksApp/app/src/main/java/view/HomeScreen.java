@@ -1,14 +1,25 @@
 
 package view;
 
+/**
+ *
+ * @author RFagundes
+ */
+
+
 
 public class HomeScreen extends javax.swing.JFrame {
 
-   
+    
+    
     public HomeScreen() {
         initComponents();
     }
 
+    
+    
+    
+    
     
     
     
@@ -22,25 +33,43 @@ public class HomeScreen extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        homeHeader = new javax.swing.JPanel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        homeHeader.setBackground(new java.awt.Color(0, 0, 102));
+
+        javax.swing.GroupLayout homeHeaderLayout = new javax.swing.GroupLayout(homeHeader);
+        homeHeader.setLayout(homeHeaderLayout);
+        homeHeaderLayout.setHorizontalGroup(
+            homeHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 592, Short.MAX_VALUE)
+        );
+        homeHeaderLayout.setVerticalGroup(
+            homeHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(homeHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(17, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(homeHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(261, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
-    
-    
     /**
      * @param args the command line arguments
      */
@@ -75,14 +104,12 @@ public class HomeScreen extends javax.swing.JFrame {
             }
         });
     }
-     
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel homeHeader;
     // End of variables declaration//GEN-END:variables
 
-    
-    
-    
-    
+
 
 
 

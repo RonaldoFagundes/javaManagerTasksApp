@@ -1,15 +1,13 @@
-/*
+package model;
+
+import controller.Task;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import model.Task;
 import util.ConnectionFactory;
-*/
-package model;
 
 /**
  *
@@ -20,7 +18,7 @@ package model;
 
 public class TaskModel {
     
-    /*
+  
     
     public void save(Task task)  {
         
@@ -49,17 +47,15 @@ public class TaskModel {
             
           } catch (Exception e) {
             throw new RuntimeException("ERRO no metodo insert tasks "+e.getMessage(),e);
-        } finally {
-            ConnectionFactory.closeConnection(conn,pst);
-            
-                      
-        }
-    }
+          } finally {
+            ConnectionFactory.closeConnection(conn , pst);          
+       }
+     }
 
     
     
     
-    
+ 
     
     public void update(Task task) {
 
@@ -93,7 +89,7 @@ public class TaskModel {
         } catch (Exception e) {
             throw new RuntimeException("ERRO no metodo update tasks "+e.getMessage(),e);
         } finally {
-            ConnectionFactory.closeConnection(conn,pst);
+            ConnectionFactory.closeConnection(conn, pst);
             
                       
         }
@@ -130,7 +126,7 @@ public class TaskModel {
         } catch (Exception e) {
             throw new RuntimeException("ERRO no metodo deletar tasks "+e.getMessage(),e);
         } finally {
-            ConnectionFactory.closeConnection(conn,pst);
+            ConnectionFactory.closeConnection(conn ,pst);
         }
     }
 
@@ -182,11 +178,11 @@ public class TaskModel {
         } catch (Exception e) {
             throw new RuntimeException("ERRO no metodo getAll tasks "+e.getMessage(),e);
         } finally {
-            ConnectionFactory.closeConnection(conn,pst,rs);
+            ConnectionFactory.closeConnection(conn, pst, rs);
         }               
         
         return tasks;
     }
     
-    */
+   
 }

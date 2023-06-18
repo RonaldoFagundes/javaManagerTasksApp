@@ -7,14 +7,14 @@ import java.util.Date;
 public class Project {
     
     
-    private String id;
+    private int id;
     private String name;
     private String description;
     private Date createdAt;
     private Date updatedAt;
 
     
-    public Project(String id, String name, String description, Date createdAt, Date updatedAt) {
+    public Project(int id, String name, String description, Date createdAt, Date updatedAt) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -22,14 +22,28 @@ public class Project {
         this.updatedAt = updatedAt;
     }
 
-    public String getId() {
-        return id;
+    
+    
+    public Project(){
     }
 
-    public void setId(String id) {
+    
+    
+    
+    
+    
+    public int getId() {
+        return this.id;
+    }
+
+    public void setId(int id) {
         this.id = id;
     }
 
+    
+    
+    
+    
     public String getName() {
         return name;
     }
