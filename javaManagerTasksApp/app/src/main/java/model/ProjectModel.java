@@ -10,16 +10,15 @@ import util.ConnectionFactory;
 */
 package model;
 
+
+
 /**
  *
  * @author RFagundes
  */
 public class ProjectModel {
    
-    
-  
-    
-    
+     
     
     /*
      public void save(Project project)  {

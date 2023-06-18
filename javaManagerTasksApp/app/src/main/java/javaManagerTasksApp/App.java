@@ -3,6 +3,8 @@
  */
 package javaManagerTasksApp;
 
+import java.sql.Connection;
+import util.ConnectionFactory;
 import view.HomeScreen;
 
 public class App {
@@ -21,6 +23,9 @@ public class App {
     public static void main(String[] args) {
         //System.out.println(new App().getGreeting());
         
-        home.setVisible(true);
+        //home.setVisible(true);
+        
+        Connection conn = ConnectionFactory.getConnection();
+        ConnectionFactory.closeConnection(conn);
     }
 }
