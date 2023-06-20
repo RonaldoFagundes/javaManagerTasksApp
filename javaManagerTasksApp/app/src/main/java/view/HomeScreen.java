@@ -34,20 +34,171 @@ public class HomeScreen extends javax.swing.JFrame {
     private void initComponents() {
 
         homeHeader = new javax.swing.JPanel();
+        jLabelHeaderLogo = new javax.swing.JLabel();
+        jLabelHeaderTitle = new javax.swing.JLabel();
+        jLabelHeaderSubtitle = new javax.swing.JLabel();
+        containerProjects = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jListProject = new javax.swing.JList<>();
+        jLabelProject = new javax.swing.JLabel();
+        btnAddProject = new javax.swing.JLabel();
+        containerTasks = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jLabelTask = new javax.swing.JLabel();
+        btnAddTask = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 0, 102));
 
         homeHeader.setBackground(new java.awt.Color(0, 0, 102));
+
+        jLabelHeaderLogo.setText("logo");
+
+        jLabelHeaderTitle.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabelHeaderTitle.setForeground(new java.awt.Color(0, 255, 255));
+        jLabelHeaderTitle.setText("Task Manager");
+
+        jLabelHeaderSubtitle.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabelHeaderSubtitle.setForeground(new java.awt.Color(51, 255, 255));
+        jLabelHeaderSubtitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelHeaderSubtitle.setText("Gerencie projetos e tarefas");
 
         javax.swing.GroupLayout homeHeaderLayout = new javax.swing.GroupLayout(homeHeader);
         homeHeader.setLayout(homeHeaderLayout);
         homeHeaderLayout.setHorizontalGroup(
             homeHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 592, Short.MAX_VALUE)
+            .addGroup(homeHeaderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(homeHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(homeHeaderLayout.createSequentialGroup()
+                        .addComponent(jLabelHeaderLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabelHeaderTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabelHeaderSubtitle, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         homeHeaderLayout.setVerticalGroup(
             homeHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, homeHeaderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(homeHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelHeaderLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelHeaderTitle))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabelHeaderSubtitle)
+                .addContainerGap())
+        );
+
+        containerProjects.setBackground(new java.awt.Color(0, 0, 102));
+
+        jListProject.setBackground(new java.awt.Color(0, 204, 204));
+        jListProject.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jListProject.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jListProject.setForeground(new java.awt.Color(0, 0, 102));
+        jListProject.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jListProject.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jListProject.setAutoscrolls(false);
+        jScrollPane1.setViewportView(jListProject);
+
+        jLabelProject.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabelProject.setForeground(new java.awt.Color(51, 255, 153));
+        jLabelProject.setText("Projetos");
+
+        btnAddProject.setText("btn");
+
+        javax.swing.GroupLayout containerProjectsLayout = new javax.swing.GroupLayout(containerProjects);
+        containerProjects.setLayout(containerProjectsLayout);
+        containerProjectsLayout.setHorizontalGroup(
+            containerProjectsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(containerProjectsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(containerProjectsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(containerProjectsLayout.createSequentialGroup()
+                        .addComponent(jScrollPane1)
+                        .addContainerGap())
+                    .addGroup(containerProjectsLayout.createSequentialGroup()
+                        .addComponent(jLabelProject, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
+                        .addComponent(btnAddProject, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))))
+        );
+        containerProjectsLayout.setVerticalGroup(
+            containerProjectsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, containerProjectsLayout.createSequentialGroup()
+                .addGroup(containerProjectsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelProject, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAddProject, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        containerTasks.setBackground(new java.awt.Color(0, 0, 102));
+
+        jTable1.setBackground(new java.awt.Color(0, 204, 204));
+        jTable1.setForeground(new java.awt.Color(0, 0, 102));
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Nome", "Descrição", "Prazo", "Tarefa Concluida"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(jTable1);
+
+        jLabelTask.setBackground(new java.awt.Color(0, 0, 102));
+        jLabelTask.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabelTask.setForeground(new java.awt.Color(0, 255, 153));
+        jLabelTask.setText("Tarefas");
+
+        btnAddTask.setText("btn");
+
+        javax.swing.GroupLayout containerTasksLayout = new javax.swing.GroupLayout(containerTasks);
+        containerTasks.setLayout(containerTasksLayout);
+        containerTasksLayout.setHorizontalGroup(
+            containerTasksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(containerTasksLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelTask, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnAddTask, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(72, 72, 72))
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 489, Short.MAX_VALUE)
+        );
+        containerTasksLayout.setVerticalGroup(
+            containerTasksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, containerTasksLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(containerTasksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelTask, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAddTask, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -55,16 +206,24 @@ public class HomeScreen extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(homeHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(homeHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(containerProjects, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(containerTasks, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(homeHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(261, Short.MAX_VALUE))
+                .addComponent(homeHeader, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(containerTasks, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(containerProjects, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         pack();
@@ -106,7 +265,20 @@ public class HomeScreen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel btnAddProject;
+    private javax.swing.JLabel btnAddTask;
+    private javax.swing.JPanel containerProjects;
+    private javax.swing.JPanel containerTasks;
     private javax.swing.JPanel homeHeader;
+    private javax.swing.JLabel jLabelHeaderLogo;
+    private javax.swing.JLabel jLabelHeaderSubtitle;
+    private javax.swing.JLabel jLabelHeaderTitle;
+    private javax.swing.JLabel jLabelProject;
+    private javax.swing.JLabel jLabelTask;
+    private javax.swing.JList<String> jListProject;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 
 
