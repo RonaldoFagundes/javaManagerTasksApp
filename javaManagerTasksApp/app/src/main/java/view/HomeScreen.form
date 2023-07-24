@@ -34,9 +34,9 @@
                       <Component id="containerProjects" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="containerTasks" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -44,11 +44,11 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="homeHeader" min="-2" pref="69" max="-2" attributes="0"/>
+              <Component id="homeHeader" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="containerTasks" max="32767" attributes="0"/>
                   <Component id="containerProjects" max="32767" attributes="0"/>
+                  <Component id="containerTasks" max="32767" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -69,11 +69,11 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Component id="jLabelHeaderLogo" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="HomeHeaderLogo" min="-2" pref="70" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabelHeaderTitle" min="-2" pref="228" max="-2" attributes="0"/>
+                          <Component id="HomeHeaderTitle" min="-2" pref="228" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="jLabelHeaderSubtitle" alignment="0" min="-2" pref="317" max="-2" attributes="0"/>
+                      <Component id="HomeHeaderSubtitle" alignment="0" min="-2" pref="317" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -84,23 +84,23 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabelHeaderLogo" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                      <Component id="jLabelHeaderTitle" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="HomeHeaderLogo" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                      <Component id="HomeHeaderTitle" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jLabelHeaderSubtitle" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="27" max="32767" attributes="0"/>
+                  <Component id="HomeHeaderSubtitle" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabelHeaderLogo">
+        <Component class="javax.swing.JLabel" name="HomeHeaderLogo">
           <Properties>
             <Property name="text" type="java.lang.String" value="logo"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabelHeaderTitle">
+        <Component class="javax.swing.JLabel" name="HomeHeaderTitle">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="24" style="1"/>
@@ -111,7 +111,7 @@
             <Property name="text" type="java.lang.String" value="Task Manager"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabelHeaderSubtitle">
+        <Component class="javax.swing.JLabel" name="HomeHeaderSubtitle">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="0"/>
@@ -143,9 +143,9 @@
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabelProject" min="-2" pref="103" max="-2" attributes="0"/>
-                          <EmptySpace pref="81" max="32767" attributes="0"/>
-                          <Component id="btnAddProject" min="-2" pref="36" max="-2" attributes="0"/>
+                          <Component id="HomeProject" min="-2" pref="103" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="HomeBtnAddProject" min="-2" pref="41" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -156,11 +156,11 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabelProject" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
-                      <Component id="btnAddProject" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="HomeProject" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="HomeBtnAddProject" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" pref="396" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -174,7 +174,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JList" name="jListProject">
+            <Component class="javax.swing.JList" name="ProjectList">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="0" type="rgb"/>
@@ -191,13 +191,7 @@
                   <Color blue="66" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-                  <StringArray count="5">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
-                    <StringItem index="4" value="Item 5"/>
-                  </StringArray>
+                  <StringArray count="0"/>
                 </Property>
                 <Property name="selectionMode" type="int" value="0"/>
                 <Property name="autoscrolls" type="boolean" value="false"/>
@@ -208,7 +202,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="jLabelProject">
+        <Component class="javax.swing.JLabel" name="HomeProject">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="1"/>
@@ -219,10 +213,13 @@
             <Property name="text" type="java.lang.String" value="Projetos"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="btnAddProject">
+        <Component class="javax.swing.JLabel" name="HomeBtnAddProject">
           <Properties>
             <Property name="text" type="java.lang.String" value="btn"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="HomeBtnAddProjectMouseClicked"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -238,12 +235,12 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabelTask" min="-2" pref="97" max="-2" attributes="0"/>
+                  <Component id="HomeTask" min="-2" pref="97" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="btnAddTask" min="-2" pref="37" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+                  <Component id="HomeBtnAddTask" min="-2" pref="48" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
               </Group>
-              <Component id="jScrollPane2" alignment="0" pref="489" max="32767" attributes="0"/>
+              <Component id="jScrollPane2" alignment="0" pref="498" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -251,12 +248,12 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabelTask" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
-                      <Component id="btnAddTask" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
+                      <Component id="HomeTask" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
+                      <Component id="HomeBtnAddTask" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jScrollPane2" pref="0" max="32767" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jScrollPane2" min="-2" pref="384" max="-2" attributes="0"/>
+                  <EmptySpace pref="23" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -269,10 +266,10 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="jTable1">
+            <Component class="javax.swing.JTable" name="TaskList">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="cc" red="0" type="rgb"/>
+                  <Color blue="66" green="33" red="0" type="rgb"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="66" green="0" red="0" type="rgb"/>
@@ -289,7 +286,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="jLabelTask">
+        <Component class="javax.swing.JLabel" name="HomeTask">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="0" red="0" type="rgb"/>
@@ -303,10 +300,13 @@
             <Property name="text" type="java.lang.String" value="Tarefas"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="btnAddTask">
+        <Component class="javax.swing.JLabel" name="HomeBtnAddTask">
           <Properties>
             <Property name="text" type="java.lang.String" value="btn"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="HomeBtnAddTaskMouseClicked"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

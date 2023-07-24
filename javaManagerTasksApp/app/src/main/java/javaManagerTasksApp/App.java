@@ -11,6 +11,7 @@ import java.util.List;
 import model.ProjectModel;
 import model.TaskModel;
 import util.ConnectionFactory;
+import view.HomeScreen;
 
 
 
@@ -21,7 +22,7 @@ public class App {
     
     
     
-   // static  HomeScreen home = new HomeScreen();
+    static  HomeScreen home = new HomeScreen();
     
     
     /*
@@ -39,7 +40,7 @@ public class App {
         
         
         //System.out.println(new App().getGreeting());        
-        //home.setVisible(true);
+        home.setVisible(true);
         
        // Connection conn = ConnectionFactory.getConnection();
        // ConnectionFactory.closeConnection(conn);

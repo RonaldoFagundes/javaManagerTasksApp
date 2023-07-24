@@ -1,20 +1,22 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package view;
+
+import controller.Project;
+import javax.swing.JOptionPane;
+import model.ProjectModel;
 
 /**
  *
  * @author RFagundes
  */
-public class ProjectScreen extends javax.swing.JFrame {
+public class ProjectScreen extends javax.swing.JDialog {
 
-    /**
-     * Creates new form ProjectScreen
-     */
-    public ProjectScreen() {
+    ProjectModel projectModel ; 
+    
+    public ProjectScreen(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
         initComponents();
+        
+        projectModel = new ProjectModel();
     }
 
     /**
@@ -26,104 +28,68 @@ public class ProjectScreen extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanelConteiner = new javax.swing.JPanel();
-        jPanelContent = new javax.swing.JPanel();
-        jLabelTitle = new javax.swing.JLabel();
-        addProject = new javax.swing.JLabel();
-        jLabelProjectName = new javax.swing.JLabel();
-        jTextFieldName = new javax.swing.JTextField();
-        jLabelDescription = new javax.swing.JLabel();
+        ProjectLabelDescription = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextAreaDescription = new javax.swing.JTextArea();
+        ProjectDescription = new javax.swing.JTextArea();
+        ProjectLabelName = new javax.swing.JLabel();
+        jPanelContent = new javax.swing.JPanel();
+        ProjectTitle = new javax.swing.JLabel();
+        ProjectAddProject = new javax.swing.JLabel();
+        ProjectName = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 0, 102));
 
-        jPanelConteiner.setBackground(new java.awt.Color(0, 0, 102));
+        ProjectLabelDescription.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        ProjectLabelDescription.setForeground(new java.awt.Color(0, 255, 255));
+        ProjectLabelDescription.setText("Descrição");
+
+        ProjectDescription.setBackground(new java.awt.Color(0, 255, 255));
+        ProjectDescription.setColumns(20);
+        ProjectDescription.setRows(5);
+        jScrollPane1.setViewportView(ProjectDescription);
+
+        ProjectLabelName.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        ProjectLabelName.setForeground(new java.awt.Color(51, 255, 255));
+        ProjectLabelName.setText("Nome");
 
         jPanelContent.setBackground(new java.awt.Color(0, 51, 153));
 
-        jLabelTitle.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabelTitle.setForeground(new java.awt.Color(0, 255, 255));
-        jLabelTitle.setText("Projeto");
+        ProjectTitle.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        ProjectTitle.setForeground(new java.awt.Color(51, 255, 255));
+        ProjectTitle.setText("Projetos");
 
-        addProject.setText("btn");
+        ProjectAddProject.setText("btn");
+        ProjectAddProject.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ProjectAddProjectMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelContentLayout = new javax.swing.GroupLayout(jPanelContent);
         jPanelContent.setLayout(jPanelContentLayout);
         jPanelContentLayout.setHorizontalGroup(
             jPanelContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelContentLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jLabelTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, Short.MAX_VALUE)
-                .addComponent(addProject, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
+                .addContainerGap()
+                .addComponent(ProjectTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ProjectAddProject, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25))
         );
         jPanelContentLayout.setVerticalGroup(
             jPanelContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelContentLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanelContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(addProject, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(7, Short.MAX_VALUE))
+                .addGroup(jPanelContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(ProjectTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
+                    .addComponent(ProjectAddProject, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLabelProjectName.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabelProjectName.setForeground(new java.awt.Color(102, 255, 255));
-        jLabelProjectName.setText("Nome");
-
-        jTextFieldName.setBackground(new java.awt.Color(0, 255, 255));
-        jTextFieldName.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jTextFieldName.setForeground(new java.awt.Color(0, 0, 102));
-
-        jLabelDescription.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabelDescription.setForeground(new java.awt.Color(51, 255, 255));
-        jLabelDescription.setText("Descrição");
-
-        jTextAreaDescription.setBackground(new java.awt.Color(0, 255, 255));
-        jTextAreaDescription.setColumns(20);
-        jTextAreaDescription.setRows(5);
-        jScrollPane1.setViewportView(jTextAreaDescription);
-
-        javax.swing.GroupLayout jPanelConteinerLayout = new javax.swing.GroupLayout(jPanelConteiner);
-        jPanelConteiner.setLayout(jPanelConteinerLayout);
-        jPanelConteinerLayout.setHorizontalGroup(
-            jPanelConteinerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelConteinerLayout.createSequentialGroup()
-                .addGroup(jPanelConteinerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelConteinerLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanelContent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanelConteinerLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addGroup(jPanelConteinerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldName)
-                            .addGroup(jPanelConteinerLayout.createSequentialGroup()
-                                .addGroup(jPanelConteinerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabelProjectName, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabelDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, Short.MAX_VALUE))))
-                    .addGroup(jPanelConteinerLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1)))
-                .addContainerGap())
-        );
-        jPanelConteinerLayout.setVerticalGroup(
-            jPanelConteinerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelConteinerLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanelContent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabelProjectName, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextFieldName, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabelDescription)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        ProjectName.setBackground(new java.awt.Color(0, 255, 255));
+        ProjectName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        ProjectName.setForeground(new java.awt.Color(0, 0, 102));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -131,19 +97,57 @@ public class ProjectScreen extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanelConteiner, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ProjectName, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
+                    .addComponent(jPanelContent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ProjectLabelDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ProjectLabelName, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanelConteiner, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanelContent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ProjectLabelName)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ProjectName, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(ProjectLabelDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    
+    
+    private void ProjectAddProjectMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ProjectAddProjectMouseClicked
+      
+      try{
+       Project projectController = new Project();              
+       projectController.setName(ProjectName.getText());
+       projectController.setDescription(ProjectDescription.getText());       
+       projectModel.save(projectController);
+       JOptionPane.showMessageDialog(rootPane, " Projeto Salvo com Sucesso!");
+      }catch(Exception ex){
+       JOptionPane.showMessageDialog(rootPane, ex.getMessage());    
+      }
+       this.dispose();
+    }//GEN-LAST:event_ProjectAddProjectMouseClicked
+
+    
+    
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -171,23 +175,29 @@ public class ProjectScreen extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        /* Create and display the form */
+        /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ProjectScreen().setVisible(true);
+                ProjectScreen dialog = new ProjectScreen(new javax.swing.JFrame(), true);
+                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                    @Override
+                    public void windowClosing(java.awt.event.WindowEvent e) {
+                        System.exit(0);
+                    }
+                });
+                dialog.setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel addProject;
-    private javax.swing.JLabel jLabelDescription;
-    private javax.swing.JLabel jLabelProjectName;
-    private javax.swing.JLabel jLabelTitle;
-    private javax.swing.JPanel jPanelConteiner;
+    private javax.swing.JLabel ProjectAddProject;
+    private javax.swing.JTextArea ProjectDescription;
+    private javax.swing.JLabel ProjectLabelDescription;
+    private javax.swing.JLabel ProjectLabelName;
+    private javax.swing.JTextField ProjectName;
+    private javax.swing.JLabel ProjectTitle;
     private javax.swing.JPanel jPanelContent;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextAreaDescription;
-    private javax.swing.JTextField jTextFieldName;
     // End of variables declaration//GEN-END:variables
 }
