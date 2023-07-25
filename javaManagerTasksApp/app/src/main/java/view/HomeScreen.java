@@ -2,6 +2,7 @@
 package view;
 
 import controller.Project;
+import controller.Task;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.WindowAdapter;
@@ -10,6 +11,7 @@ import java.util.List;
 import javax.swing.DefaultListModel;
 import model.ProjectModel;
 import model.TaskModel;
+import util.TaskTableModel;
 
 /**
  *
@@ -23,8 +25,10 @@ public class HomeScreen extends javax.swing.JFrame {
      ProjectModel projecModel;
      TaskModel taskModel;
      
-     DefaultListModel projectController ;
-    
+     DefaultListModel defaultProjects ;
+     TaskTableModel taskTableModel;
+     
+     
     public HomeScreen() {
         initComponents();
         decorateTableTask();
@@ -157,7 +161,7 @@ public class HomeScreen extends javax.swing.JFrame {
         containerTasks.setBackground(new java.awt.Color(0, 0, 102));
 
         TaskList.setBackground(new java.awt.Color(0, 51, 102));
-        TaskList.setForeground(new java.awt.Color(0, 0, 102));
+        TaskList.setForeground(new java.awt.Color(0, 255, 255));
         TaskList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -346,25 +350,42 @@ public class HomeScreen extends javax.swing.JFrame {
 
  
  public void initComponentsModel(){
-     projectController = new DefaultListModel();
+     defaultProjects = new DefaultListModel();
      loadProjects();
+     
+     taskTableModel = new TaskTableModel();
+     TaskList.setModel(taskTableModel);
+     
+     loadTasks(2);
+     
+     
  }
  
  
  
  public void loadProjects(){
      List<Project> projects = projecModel.getAll();
-     projectController.clear();
+     defaultProjects.clear();
      
      for (int i = 0; i < projects.size(); i++) {
          
          Project project = projects.get(i);
-         projectController.addElement(project);
+         defaultProjects.addElement(project);
      }
      
-      ProjectList.setModel(projectController);
+      ProjectList.setModel(defaultProjects);
  }
  
  
+ 
+ 
+ 
+  public void loadTasks(int idProject){
+      
+      List<Task> tasks = taskModel.getAll(idProject);
+      
+      taskTableModel.setTasks(tasks);
+      
+  }
  
 }

@@ -18,6 +18,8 @@ public class Task {
     private Date updatedAt;
     private String notes;
 
+    
+    
     public Task(int id, int idProject, String name , String notes , boolean isCompleted, String description, Date deadLine, Date createdAt, Date updatedAt ) {
         this.id = id;
         this.idProject = idProject;

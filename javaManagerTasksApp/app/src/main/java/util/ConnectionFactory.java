@@ -14,8 +14,10 @@ public class ConnectionFactory {
     public static final String DRIVER = "com.mysql.cj.jdbc.Driver";
     public static final String DB     = "capgemini";
     public static final String URL    = "jdbc:mysql://localhost:3306/"+DB+"?useTimezone=true&serverTimezone=UTC";
-    public static final String USER   = "";
-    public static final String PASS   = "";
+    public static final String USER   = "RFagundes";
+    public static final String PASS   = "UREgoOymPF6LWa7H";
+   
+    
     
     
     public static Connection getConnection(){
